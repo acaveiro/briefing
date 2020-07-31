@@ -1,0 +1,264 @@
+
+<!DOCTYPE html>
+	<html xmlns="http://www.w3.org/1999/xhtml" lang="en-GB" xml:lang="en-GB"> 
+	
+	<head>	
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+		<meta name="keywords" content="acc,aeroclube"/>
+		<meta name="description" content=""/>
+		<meta name="author" content="Jose Rodrigues"/> 
+		
+		<link href="style.css" rel="stylesheet" type="text/css">
+		<link href="./resources/faviconACC.jpg" rel="shortcut icon" type="image/x-icon" />
+		
+		<title>Aeroclube de Coimbra</title>
+		
+		<script src="jquery-1.12.0.js"></script>
+		<script src="jspdf.min.js"></script>
+		<script src="jspdf-plugin.js"></script>
+		<script src="xml2json.min.js"></script>
+		<script src="office.js"></script>
+		<script src="jspdf.plugin.autotable.js"></script>
+		
+		
+	</head>
+	
+	<body>
+		<div id="body">	
+			<div id="header"> 
+				<br><br>
+				 <a href="https://www.aeroclubedecoimbra.com/"><img src="./resources/logoACC.jpg" class="logo"></a>
+				<br><br>
+				<h1>Processo de Voo</h1>
+			</div>
+			<div id="container">
+				<div id="menu">
+					<div id="insertData">	
+						<form >
+						<table class="insertDataTop">
+						  <tr>
+							<td>data</td>
+							<td class="generalData">avi&atilde;o</td>
+							<td class="generalData">curso</td>
+							<td class="generalData">indicativo</td>
+							<td class="generalData">miss&atilde;o</td>
+							<td class="generalData">tipo de opera&ccedil;&atilde;o</td>
+						  </tr>
+						  
+						  <tr>
+							<td><input id="datePicker" type="date" data-date="" data-date-format="YYYY-MM-DD" value=""></td>
+						    <td >
+								<select class="insert1 dropBox1" id="airplane">
+									<option class="dropBox" value="cs-dim">CS-DIM</option>
+									<option class="dropBox" value="cs-aii">CS-AII</option>
+								</select>
+							</td>
+							<td><input class="insert1" type="text" name="course" Id="course" maxlength = "10"  value="PPL02/2020" required></td>
+							<td><input class="insert1" type="text" name="callsign" Id="callsign" maxlength = "7"  value="MOD" required></td>
+							<td><input class="insert1" type="text" name="mission" Id="mission" maxlength = "15"  value="M" required></td>
+							<td >
+								<select class="insert1 dropBox1" id="operationType">
+									<option class="dropBox" value="instruction">instru&ccedil;&atilde;o</option>
+									<option class="dropBox" value="training">treino</option>
+									<option class="dropBox" value="adaptatation">adapta&ccedil;&atilde;o</option>
+									<option class="dropBox" value="verification">verificação</option>
+									<option class="dropBox" value="exam">exame</option>
+									<option class="dropBox" value="initiationFlight">voo de inicia&ccedil;&atilde;o</option>
+								</select>
+							</td>
+						   </tr>		  
+						</table>
+						<table id= "trip">
+							<tr id="topRow"> 
+								
+								<td>ETD</td>
+								<td>ETA</td>
+								<td></td>
+								
+								<td>combustível (litros)</td>
+								<td>consumo(l/h)</td>
+								<td>observações</td>
+							</tr>
+							<tr>
+								
+								<td><input class="time" type="time" name="time" id="ETD" /></td>
+								<td><input class="time" type="time" name="time" id="ETA"/></td>
+								<td >
+									<select class="insert1 dropBox1" id="timeType">
+										<option class="dropBox" value="utc">UTC</option>
+										<option class="dropBox" value="lt">LT</option>
+									</select>
+								</td>	
+								
+								<td><input class="insert" type="text" Id="fuelQuantity" maxlength = "3" min="0" max="999" placeholder="000" ></td>
+								<td><input class="insert" type="text" Id="fuelConsumption" maxlength = "3" min="0" max="999" placeholder="000" ></td>
+								<td><input class="insert1" type="text" name="notes" Id="notes" maxlength = "140" value="circuitos" required></td>
+								
+							</tr>
+						</table>
+						<table>
+							<tr id="topRow"> 
+								<td>aerodromo de partida</td>
+								<td>destino</td>
+								<td>percurso</td>
+							</tr>
+							<tr id="topRow"> 
+								<td><input class="insert" type="text" Id="aerodromeDeparture" maxlength = "30"  value="LPCO" ></td>
+								<td><input class="insert" type="text" Id="aerodromeArrival" maxlength = "30" value="LPCO" ></td>
+								<td><input class="insert1" type="text" name="journey" Id="journey" maxlength = "140" value="LPCO-circuitos-LPCO" required></td>
+							</tr>
+						</table>
+						</form>
+						<!--<table id="commentsTable">
+						  <tr>
+							<td>detalhes</td>
+						  </tr>-->
+						 <!-- <tr>
+		
+							<td><input class="insert" type="text" Id="comment" maxlength = "140" placeholder="se necess&aacute;rio insira observa&ccedil;&atilde;o"></td>
+						
+						  </tr>		  -->
+						<!--</table>-->
+						<!--kdo se usa number ele n limita o tamanho, numeric limita-->
+						<h2>Pessoas a Bordo</h2>
+						<table id= "palletsDetails">
+								<tr id="topRow"> 
+									<td>fun&ccedil;&atilde;o</td>
+									<td>nome</td>
+									<td>n&ordm lic/ca/cc</td>
+									<td>peso</td>
+									<td>pic</td>
+									<td>instrutor</td>
+								</tr>
+								<tr> 
+									<td>
+										<select class="insert1 dropBox1" id="passengerFunction1">
+											<option ></option>
+											<option class="dropBox" id="pilotCmdtFIFE" value="pilotCmdtFIFE" selected>Piloto CMDT/FI/FE</option>
+											<option class="dropBox" id="pilot" value="pilot">Piloto</option>
+											<option class="dropBox" id="studentPilot" value="studentPilot">Aluno Piloto</option>
+											<option class="dropBox" id="passenger" value="passenger">Passageiro</option>
+										</select>
+									</td>
+										
+									<td><input class="insert" type="text" Id="passengerName1" maxlength = "100"  value="Jorge Oliveira" ></td>
+									<td><input class="insert" type="text" Id="passengerLicenceNumber1" maxlength = "20" value="P3" ></td>
+									<td><input class="insert" type="text" Id="passengerWeight1" maxlength = "3" min="1" max="999" value="80"></td>
+									<td class="radio">
+										<label><input type="radio" id="passenger1IsPIC" name="radioPIC" checked="checked"></label>
+								   </td>
+								   <td><input type="checkbox" id="passenger1IsInstructor" name="passengerIsInstructor" value="passenger1IsInstructor" checked="checked"></td>
+								</tr>									
+								<tr> 
+									<td>
+										<select class="insert1 dropBox1" id="passengerFunction2">
+											<option ></option>
+											<option class="dropBox" id="pilotCmdtFIFE" value="pilotCmdtFIFE">Piloto CMDT/FI/FE</option>
+											<option class="dropBox" id="pilot" value="pilot">Piloto</option>
+											<option class="dropBox" id="studentPilot" value="studentPilot" selected>Aluno Piloto</option>
+											<option class="dropBox" id="passenger" value="passenger">Passageiro</option>
+										</select>
+									</td>
+									<td><input class="insert" type="text" Id="passengerName2" maxlength = "100"  value="José Rodrigues" ></td>
+									<td><input class="insert" type="text" Id="passengerLicenceNumber2" maxlength = "20" value="" ></td>
+									<td><input class="insert" type="text" Id="passengerWeight2" maxlength = "3" min="1" max="999" value="85"></td>									<td class="radio">
+										<label><input type="radio" id="passenger2IsPIC" name="radioPIC"></label>
+								   </td>																	
+								   <td><input type="checkbox" id="passenger2IsInstructor" name="passengerIsInstructor" value="passenger2IsInstructor"></td>
+								</tr>
+								<tr> 
+									<td>
+										<select class="insert1 dropBox1" id="passengerFunction3">
+											<option ></option>
+											<option class="dropBox" id="pilotCmdtFIFE" value="pilotCmdtFIFE">Piloto CMDT/FI/FE</option>
+											<option class="dropBox" id="pilot" value="pilot">Piloto</option>
+											<option class="dropBox" id="studentPilot" value="studentPilot">Aluno Piloto</option>
+											<option class="dropBox" id="passenger" value="passenger">Passageiro</option>
+										</select>
+									</td>
+									<td><input class="insert" type="text" Id="passengerName3" maxlength = "100"  value="" ></td>
+									<td><input class="insert" type="text" Id="passengerLicenceNumber3" maxlength = "20" value="" ></td>
+									<td><input class="insert" type="text" Id="passengerWeight3" maxlength = "3" min="1" max="999" value=""></td>	
+									<td class="radio">
+										<label><input type="radio" id="passenger3IsPIC" name="radioPIC"></label>
+								   </td>											
+								   <td><input type="checkbox" id="passenger3IsInstructor" name="passengerIsInstructor" value="passenger3IsInstructor"></td>
+								</tr>
+								<tr> 
+									<td>
+										<select class="insert1 dropBox1" id="passengerFunction4">
+											<option ></option>
+											<option class="dropBox" id="pilotCmdtFIFE" value="pilotCmdtFIFE">Piloto CMDT/FI/FE</option>
+											<option class="dropBox" id="pilot" value="pilot">Piloto</option>
+											<option class="dropBox" id="studentPilot" value="studentPilot">Aluno Piloto</option>
+											<option class="dropBox" id="passenger" value="passenger">Passageiro</option>
+										</select>
+									</td>
+									<td><input class="insert" type="text" Id="passengerName4" maxlength = "100"  value="" ></td>
+									<td><input class="insert" type="text" Id="passengerLicenceNumber4" maxlength = "20" value="" ></td>
+									<td><input class="insert" type="text" Id="passengerWeight4" maxlength = "3" min="1" max="999" value=""></td>	
+									<td class="radio">
+										<label><input type="radio" id="passenger4IsPIC" name="radioPIC"></label>
+								   </td>												
+								   <td><input type="checkbox" id="passenger4IsInstructor" name="passengerIsInstructor" value="passenger4IsInstructor"></td>
+								</tr>
+								<tr> 
+									<td>
+										<select class="insert1 dropBox1" id="passengerFunction5">
+											<option ></option>
+											<option class="dropBox" id="pilotCmdtFIFE" value="pilotCmdtFIFE">Piloto CMDT/FI/FE</option>
+											<option class="dropBox" id="pilot" value="pilot">Piloto</option>
+											<option class="dropBox" id="studentPilot" value="studentPilot">Aluno Piloto</option>
+											<option class="dropBox" id="passenger" value="passenger">Passageiro</option>
+										</select>
+									</td>
+									<td><input class="insert" type="text" Id="passengerName5" maxlength = "100"  value="" ></td>
+									<td><input class="insert" type="text" Id="passengerLicenceNumber5" maxlength = "20" value="" ></td>
+									<td><input class="insert" type="text" Id="passengerWeight5" maxlength = "3" min="1" max="999" value=""></td>	
+									<td class="radio">
+										<label><input type="radio" id="passenger5IsPIC" name="radioPIC"></label>
+								   </td>															
+								   <td><input type="checkbox" id="passenger5IsInstructor" name="passengerIsInstructor" value="passenger5IsInstructor"></td>
+								</tr>										
+						</table>
+						
+						<table>
+							
+						</table>
+						<p class="metar" id='metar'>metar:</p>
+						<!--<iframe class="meteogram" src="https://cors-anywhere.herokuapp.com/https://www.windy.com/LPMR?39.832,-9.987,8" width="200" height="200" scrolling="no">
+						</iframe>-->
+					</div>
+					<br><br>
+					<div id="twoButtons">	
+						<button class="printButton" onclick="printPDF()"/> <span class="specialButton">criar processo</span></button>
+						
+						<br><br>
+						<br>
+					</div>
+					<!--<iframe width="620" height="876" frameborder="0" scrolling="no" src="https://onedrive.live.com/embed?resid=507C638125CC951D%21760&authkey=%21AAm-MZe35Nor3rA&em=2&wdAllowInteractivity=False&AllowTyping=True&ActiveCell='Folha1'!C11&Item='Folha1'!A1%3AF41&wdInConfigurator=True"></iframe>-->
+					<div id="dddtwoButtons">	
+						<button class="printButton" onclick="editweightExcel0()"/> <span class="specialButton">metar</span></button>
+						
+						<br><br>
+						<br>
+					</div>-->
+				</div>
+				<div id="result" class="result">
+				</div>
+			</div>
+			<div class="footer"> 
+			    <p>vers&atilde;o 1.0.0</p>
+				<p class="copyright"></p>
+			</div>
+		</div>
+	
+		<script src="myscripts.js" language="javascript" type="text/javascript">	</script>
+
+		<noscript>
+			Desculpe... necessita de ter o Javascript ativado para continuar.\n
+			Sorry...JavaScript is needed to go ahead.
+		</noscript>
+
+	</body>
+</html> 

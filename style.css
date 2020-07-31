@@ -1,0 +1,271 @@
+body {
+    display: block;
+    text-align: center;
+	vertical-align: middle;
+	font-family: Arial, Helvetica, sans-serif;
+	margin-left: auto;
+	margin:0;
+    padding:0;
+	color:white;
+	
+
+}
+
+h1{
+	font-family:courier,"Liberation Sans",sans-serif;
+	/*font-family:'Lato', Calibri, Arial, sans-serif;*/
+	color: black;
+	/*color: #89867e;*/
+	/*font-weight: 300;*/
+	line-height: 1.3;
+	vertical-align: middle;
+
+}
+
+#menu{
+	/*background-image:url(resources/boxes.png) ;
+	background-repeat: no-repeat;
+	background-position: top center; 
+	*/
+
+}
+
+.dropBox1{
+	cursor: pointer;
+	height:160px;
+	border: 1px solid #CCC;
+	
+}
+
+#insertData {
+	margin-top: 30px;
+	padding-left: 20px;
+	padding-right:20px;
+	padding-bottom:20px;
+	background-color: rgb(0, 64, 128);
+	display: inline-block;
+	border: 1px solid;
+	 border-radius: 5px;
+}
+
+table {
+	/*font-family:courier,"Liberation Sans",sans-serif;*/
+
+	font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(0, 64, 128);
+    margin: 10px auto 5px auto ;
+    text-align: center;
+	border: 5px ;
+}
+
+.generalData{
+	font-size: 100%;
+	/*text-align: center;*/
+	margin-left: 50px ;
+	margin-right: 50px ;
+}
+
+#topRow {
+	padding: 30px auto 30px auto ;
+	font-size: 100%;
+}
+
+h2{
+	font-size: 150%;
+	margin: 20px auto 10px auto;
+	font-family:courier,"Liberation Sans",sans-serif;
+}
+
+#footer {
+   position:absolute;
+   bottom:0;
+   width:100%;
+   height:60px;   /* Height of the footer */
+   background:#6cf;
+}
+
+.footer{
+	display: block;
+    /* height:40px;*/
+	font-size:1em;
+	
+    /* text-indent:20px; */
+	clear:both; 
+	position:relative;
+	bottom: 0;
+	overflow: auto;
+	width:100%;
+	margin:10% 0 1% 0;
+	color:black;
+		
+}
+
+#highvalueLogo{
+	width:4.0em;
+	position: relative;
+	top: 3px ;
+}
+
+.logo{
+	width:10em;
+} 
+
+.insert1{
+	border: 1px solid;
+	text-align: center;
+	height:3em;
+}
+
+.insert{
+	border: 1px solid;
+	text-align: center;
+	height:2em;
+}
+
+.submitButton, .printButton{
+	background-color: rgb(0, 64, 128);
+	border: 1px solid;
+	width:17%; 
+	font-family:courier,"Liberation Sans",sans-serif;
+	font-size: 1.5em;
+	height:3em;
+	cursor: pointer;
+	content:"Gerar PDF";
+	/*border-radius: 5px 5px 5px 5px;*/
+	/*box-shadow: 0 6px #ab3c3c;*/
+	-webkit-appearance: button;
+	box-sizing: border-box;
+	-webkit-writing-mode: horizontal-tb;
+	 border-radius: 5px;
+	 outline: none;
+	 color:white;
+	 font-weight: 700;
+}
+.submitButton:active, .printButton:active, .submitButton:hover, .printButton:hover{
+	border: 0px;
+    /*background:white;
+	background-image:url(resources/piperPA38.png) ;*/
+	background-color: rgb(0, 64, 128);
+	background-size: 5.5em;
+	background-repeat: no-repeat;
+	background-position:  center; 
+	/*border-radius: 5px 5px 5px 5px;*/
+	/*box-shadow: 0 6px  #e65c00;*/
+	-webkit-appearance: button;
+	box-sizing: border-box;
+	-webkit-writing-mode: horizontal-tb;
+	outline: none;
+	color:white;
+	opacity: 0.7;
+}
+
+.submitButton:hover, .printButton:hover{
+	/*background-color:#ae311e;*/
+
+}
+
+
+/*button:hover span {display:none}*/
+
+
+.special{
+	background: #823aa0;
+    color: #fff;
+    height: 70px;
+    min-width: 260px;
+    line-height: 24px;
+    font-size: 16px;
+    overflow: hidden;
+	backface-visibility: hidden;
+	border: none;
+    font-family: inherit;
+    cursor: pointer;
+    padding: 25px 80px;
+    display: inline-block;
+    margin: 15px 30px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
+    outline: none;
+    position: relative;
+    transition: all 0.3s;
+	-webkit-writing-mode: horizontal-tb;
+	-webkit-appearance: button;
+	box-sizing: border-box;
+	
+}
+.special:before{
+	font-family: 'icomoon';
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+	-webkit-font-smoothing: antialiased;
+	box-sizing: border-box;
+	left: 0;
+    top: -100%;
+	position: absolute;
+    height: 100%;
+    width: 100%;
+    line-height: 2.5;
+    font-size: 180%;
+	transition: all 0.3s;
+	content: "\e007";
+}
+.special:after{
+
+	content: '';
+    position: absolute;
+    z-index: -1;
+	transition: all 0.3s;
+	box-sizing: border-box;
+}
+
+div.b{
+	background: #000;
+	position: relative;
+	display: inline-block;
+}
+
+
+
+/*#1, #2, #3, #4{
+	display: inline-block;
+	vertical-align: middle;
+
+}*/
+
+#result{
+	font-size:1em;
+	font-weight: bold;
+
+
+}
+
+#printedBarcode{
+	vertical-align: middle;
+	text-align: center;
+}
+
+@media print {
+	body * {
+		visibility: hidden;
+		text-align: center;
+		vertical-align: middle;
+	}
+	#printedBarcode, #printedBarcode * {
+		visibility: visible;
+		text-align: center;
+		left: 0;
+	}
+
+	@page { 
+		size: landscape; 
+		text-align: center;
+	}
+  
+    footer {
+		page-break-after: always;
+	}
+}
