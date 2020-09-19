@@ -318,7 +318,7 @@ function printPDF() {
 			}else if($( "#airplane option:selected" ).text()==="CS-AII"){
 				doc.text(15+100, 45+7+10+7, 'MARCA E MODELO: Piper PA28');
 			}
-			doc.text(15, 45+7+10+7*2, 'AUTONOMIA: '+ (parseInt($("#fuelQuantity" ).val())/parseInt($("#fuelConsumption" ).val())).toFixed(2)+" litros") ;
+			doc.text(15, 45+7+10+7*2, 'AUTONOMIA: '+ (parseInt($("#fuelQuantity" ).val())/parseInt($("#fuelConsumption" ).val())).toFixed(2)+" horas") ;
 			doc.text(15+70, 45+7+10+7*2, 'Nº DE PESSOAS A BORDO: '+ getNumberOfPassengers()) ;
 			doc.text(15+150, 45+7+10+7*2, 'OBS: ');
 			if(operationTypeSelected === 'treino'){ doc.text(15, 45+7+10+7*3, 'TIPO DE VOO: Treino_X_  Instrução___ Turismo___ Trabalho___ Outro___');}
