@@ -56,18 +56,18 @@
 						  </tr>
 						  
 						  <tr>
-							<td><input id="datePicker" type="date" data-date="" data-date-format="YYYY-MM-DD" value=""></td>
+							<td><input id="datePicker" class="insert1" type="date" data-date="" data-date-format="YYYY-MM-DD" value=""></td>
 						    <td >
-								<select class="insert1 dropBox1" id="airplane">
+								<select class="insert dropBox1" id="airplane">
 									<option class="dropBox" value="cs-dim">CS-DIM</option>
 									<option class="dropBox" value="cs-aii">CS-AII</option>
 								</select>
 							</td>
-							<td><input class="insert1" type="text" name="course" Id="course" maxlength = "10"  value="PPL02/2020" required></td>
-							<td><input class="insert1" type="text" name="callsign" Id="callsign" maxlength = "7"  value="MOD" required></td>
-							<td><input class="insert1" type="text" name="mission" Id="mission" maxlength = "15"  value="M" required></td>
+							<td><input class="insert" type="text" name="course" Id="course" maxlength = "10"  value="PPL02/2020" required></td>
+							<td><input class="insert" type="text" name="callsign" Id="callsign" maxlength = "7"  value="MOD" required></td>
+							<td><input class="insert" type="text" name="mission" Id="mission" maxlength = "15"  value="M" required></td>
 							<td >
-								<select class="insert1 dropBox1" id="operationType">
+								<select class="insert dropBox1" id="operationType">
 									<option class="dropBox" value="instruction">instru&ccedil;&atilde;o</option>
 									<option class="dropBox" value="training">treino</option>
 									<option class="dropBox" value="adaptatation">adapta&ccedil;&atilde;o</option>
@@ -91,10 +91,10 @@
 							</tr>
 							<tr>
 								
-								<td><input class="time" type="time" name="time" id="ETD" /></td>
-								<td><input class="time" type="time" name="time" id="ETA"/></td>
+								<td><input class="time insert" type="time" name="time" id="ETD" /></td>
+								<td><input class="time insert" type="time" name="time" id="ETA"/></td>
 								<td >
-									<select class="insert1 dropBox1" id="timeType">
+									<select class="insert dropBox1" id="timeType">
 										<option class="dropBox" value="utc">UTC</option>
 										<option class="dropBox" value="lt">LT</option>
 									</select>
@@ -102,7 +102,7 @@
 								
 								<td><input class="insert" type="text" Id="fuelQuantity" maxlength = "3" min="0" max="999" placeholder="000" ></td>
 								<td><input class="insert" type="text" Id="fuelConsumption" maxlength = "3" min="0" max="999" placeholder="000" ></td>
-								<td><input class="insert1" type="text" name="notes" Id="notes" maxlength = "140" value="circuitos" required></td>
+								<td><input class="insert" type="text" name="notes" Id="notes" maxlength = "140" value="circuitos" required></td>
 								
 							</tr>
 						</table>
@@ -115,7 +115,7 @@
 							<tr id="topRow"> 
 								<td><input class="insert" type="text" Id="aerodromeDeparture" maxlength = "30"  value="LPCO" ></td>
 								<td><input class="insert" type="text" Id="aerodromeArrival" maxlength = "30" value="LPCO" ></td>
-								<td><input class="insert1" type="text" name="journey" Id="journey" maxlength = "140" value="LPCO-circuitos-LPCO" required></td>
+								<td><input class="insert" type="text" name="journey" Id="journey" maxlength = "140" value="LPCO-circuitos-LPCO" required></td>
 							</tr>
 						</table>
 						</form>
@@ -161,7 +161,7 @@
 								</tr>									
 								<tr> 
 									<td>
-										<select class="insert1 dropBox1" id="passengerFunction2">
+										<select class="insert dropBox1" id="passengerFunction2">
 											<option ></option>
 											<option class="dropBox" id="pilotCmdtFIFE" value="pilotCmdtFIFE">Piloto CMDT/FI/FE</option>
 											<option class="dropBox" id="pilot" value="pilot">Piloto</option>
@@ -178,7 +178,7 @@
 								</tr>
 								<tr> 
 									<td>
-										<select class="insert1 dropBox1" id="passengerFunction3">
+										<select class="insert dropBox1" id="passengerFunction3">
 											<option ></option>
 											<option class="dropBox" id="pilotCmdtFIFE" value="pilotCmdtFIFE">Piloto CMDT/FI/FE</option>
 											<option class="dropBox" id="pilot" value="pilot">Piloto</option>
@@ -196,7 +196,7 @@
 								</tr>
 								<tr> 
 									<td>
-										<select class="insert1 dropBox1" id="passengerFunction4">
+										<select class="insert dropBox1" id="passengerFunction4">
 											<option ></option>
 											<option class="dropBox" id="pilotCmdtFIFE" value="pilotCmdtFIFE">Piloto CMDT/FI/FE</option>
 											<option class="dropBox" id="pilot" value="pilot">Piloto</option>
@@ -214,7 +214,7 @@
 								</tr>
 								<tr> 
 									<td>
-										<select class="insert1 dropBox1" id="passengerFunction5">
+										<select class="insert dropBox1" id="passengerFunction5">
 											<option ></option>
 											<option class="dropBox" id="pilotCmdtFIFE" value="pilotCmdtFIFE">Piloto CMDT/FI/FE</option>
 											<option class="dropBox" id="pilot" value="pilot">Piloto</option>
