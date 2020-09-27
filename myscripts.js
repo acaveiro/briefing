@@ -198,7 +198,7 @@ function getNotam(aerodrome){
 
 function getNotamFromNav1(){
 
-	$.get('https://www.nav.pt/ais/contingency-briefs/national-aerodromes-lppc-fir').then(function (html) {
+	$.get('https://cors-anywhere.herokuapp.com/https://www.nav.pt/ais/contingency-briefs/national-aerodromes-lppc-fir').then(function (html) {
 		// Success response
 		var $mainbar = $(html).find('.pibpage');
 		console.log($mainbar);
