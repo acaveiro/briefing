@@ -202,6 +202,8 @@ function getNotamFromNav1(){
 		// Success response
 		var $mainbar = $(html).find('.pibpage');
 		console.log($mainbar);
+		var $mainbar1 = $(html).querySelector('h1').innerText
+		console.log($mainbar1[0]);
 		//document.write($mainbar.html());
 	}, function () {
 		// Error response
