@@ -196,6 +196,20 @@ function getNotam(aerodrome){
 
 }
 
+function getNotamFromNav1(){
+
+	$.get('https://www.nav.pt/ais/contingency-briefs/national-aerodromes-lppc-fir').then(function (html) {
+		// Success response
+		var $mainbar = $(html).find('.pibpage');
+		console.log($mainbar);
+		//document.write($mainbar.html());
+	}, function () {
+		// Error response
+		document.write('Access denied');
+	});
+	
+}
+
 function getElementsByText(str, tag) {
 	return Array.prototype.slice.call(document.getElementsByTagName(tag)).filter(el => el.textContent.trim() === str.trim());
   }
