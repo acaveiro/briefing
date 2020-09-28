@@ -202,8 +202,6 @@ function getNotamFromNav1(){
 		// Success response
 		var $mainbar = $(html).find("h1:contains('LPCO - COIMBRA')").nextUntil("h1");
 		console.log($mainbar);
-		var $mainbar1 = $(html).querySelector('h1').innerText
-		console.log($mainbar1[0]);
 		//document.write($mainbar.html());
 	}, function () {
 		// Error response
