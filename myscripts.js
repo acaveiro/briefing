@@ -198,7 +198,7 @@ function getNotam(aerodrome){
 
 function getNotamFromNav1(){
 
-	$.get('https://cors-anywhere.herokuapp.com/https://www.nav.pt/ais/contingency-briefs/national-aerodromes-lppc-fir').then(function (html) {
+	$.get('https://cors-anywhere.herokuapp.com/https://www.nav.pt/ais/contingency-briefs/national-aerodromes-lppc-fir_html').then(function (html) {
 		// Success response
 		//var $mainbar = $(html).find("h1:contains('LPCO - COIMBRA')").nextUntil("h1");
 		var x2js = new X2JS();
