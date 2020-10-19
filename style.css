@@ -323,7 +323,7 @@ ul > li:first { display: none; }*/
   position: relative;
   float: left;
   background: rgb(0, 64, 128);
-  opacity: 0.5;
+  opacity: 1.0;
   /* menu background color */
 }
 
@@ -348,7 +348,7 @@ ul > li:first { display: none; }*/
 
 #nav li:hover {
   background: rgb(6, 40, 74);
-	opacity: 0.5;
+	opacity: 1.0;
 }
 
 
