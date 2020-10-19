@@ -323,7 +323,7 @@ ul > li:first { display: none; }*/
   display: block;
   position: relative;
   float: left;
-  background: #24af15;
+  background: rgb(0, 64, 128);
   /* menu background color */
 }
 
