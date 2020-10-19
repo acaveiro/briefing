@@ -386,6 +386,7 @@ ul > li:first { display: none; }*/
 }
 
 #topDropDown{
-	width:100%;
 	background: rgb(0, 64, 128);
+	margin: 0 auto;
+	width: 70%;
 }
