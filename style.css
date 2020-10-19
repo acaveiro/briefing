@@ -314,7 +314,7 @@ ul > li:first { display: none; }*/
 
  #nav {
   list-style: none inside;
-margin: 0 auto;	
+  margin: 0 auto;	
   text-align: center;
 }
 
@@ -323,6 +323,7 @@ margin: 0 auto;
   position: relative;
   float: left;
   background: rgb(0, 64, 128);
+  opacity: 0.5;
   /* menu background color */
 }
 
@@ -347,6 +348,7 @@ margin: 0 auto;
 
 #nav li:hover {
   background: rgb(6, 40, 74);
+	opacity: 0.5;
 }
 
 
@@ -384,6 +386,6 @@ margin: 0 auto;
 }
 
 #topDropDown{
-	margin: 0 auto;	
+	width:100%;
 	background: rgb(0, 64, 128);
 }
