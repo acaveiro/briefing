@@ -275,7 +275,7 @@ div.b{
     margin: 0;
     list-style: none;
     height: 38px;
-    background: #fff url(three_0.gif) position:relative;
+    background: #fff;
     z-index: 500;
     font-family: arial, verdana, sans-serif;
 }
