@@ -331,7 +331,7 @@ ul > li:first { display: none; }*/
   display: block;
   padding: 0;
   text-decoration: none;
-  width: calc(100% / 7);
+  width: 150px;
   /* this is the width of the menu items */
   line-height: 35px;
   /* this is the hieght of the menu items */
@@ -379,7 +379,7 @@ ul > li:first { display: none; }*/
 #nav li li:hover ul {
   display: block;
   /* shows sub-sublist on hover */
-  margin-left: calc(100% / 7);
+  margin-left: 150px;
   /* this should be the same width as the parent list item */
   margin-top: -35px;
   /* aligns top of sub menu with top of list item */
