@@ -309,3 +309,5 @@ ul {
     cursor: pointer;
     background: url(three_0.gif);
 }
+
+ul > li:first { display: none; }
