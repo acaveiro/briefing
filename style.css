@@ -347,7 +347,7 @@ ul > li:first { display: none; }*/
 /* smaller font size for sub menu items */
 
 #nav li:hover {
-  background: #003f20;
+  background: rgb(6, 40, 74);
 }
 
 
