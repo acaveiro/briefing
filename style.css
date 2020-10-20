@@ -316,6 +316,8 @@ ul > li:first { display: none; }*/
   list-style: none inside;
   margin: 0 auto;	
   text-align: center;
+background: rgb(0, 64, 128);
+	 width:100%;
 }
 
 #nav li {
