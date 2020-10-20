@@ -335,7 +335,7 @@ function printPDF() {
 			}else if($( "#airplane option:selected" ).text()==="CS-AII"){
 				doc.text(15+100, 45+7+10+7, 'MARCA E MODELO: Piper PA28');
 			}
-			doc.text(15, 45+7+10+7*2, 'AUTONOMIA: '+ (parseInt($("#fuelQuantity" ).val())/parseInt($("#fuelConsumption" ).val())).toFixed(2)+" horas") ;
+			doc.text(15, 45+7+10+7*2, 'AUTONOMIA: '+ ((parseInt($("#fuelQuantityLeft" ).val())+parseInt($("#fuelQuantityRight" ).val()))/parseInt($("#fuelConsumption" ).val())).toFixed(2)+" horas") ;
 			doc.text(15+70, 45+7+10+7*2, 'Nº DE PESSOAS A BORDO: '+ getNumberOfPassengers()) ;
 			doc.text(15+150, 45+7+10+7*2, 'OBS: ');
 			if(operationTypeSelected === 'treino'){ doc.text(15, 45+7+10+7*3, 'TIPO DE VOO: Treino_X_  Instrução___ Turismo___ Trabalho___ Outro___');}
@@ -382,7 +382,7 @@ function printPDF() {
 			}else if($( "#airplane option:selected" ).text()==="CS-AII"){
 				doc.text(15+100, 45+7+10+7+downGap, 'MARCA E MODELO: Piper PA28');
 			}
-			doc.text(15, 45+7+10+7*2+downGap, 'AUTONOMIA: '+ (parseInt($("#fuelQuantity" ).val())/parseInt($("#fuelConsumption" ).val())).toFixed(2)+" horas") ;
+			doc.text(15, 45+7+10+7*2+downGap, 'AUTONOMIA: '+ ((parseInt($("#fuelQuantityLeft" ).val())+parseInt($("#fuelQuantityRight" ).val()))/parseInt($("#fuelConsumption" ).val())).toFixed(2)+" horas") ;
 			doc.text(15+70, 45+7+10+7*2+downGap, 'Nº DE PESSOAS A BORDO: '+ getNumberOfPassengers()) ;
 			doc.text(15+150, 45+7+10+7*2+downGap, 'OBS: ');
 			if(operationTypeSelected === 'treino'){ doc.text(15, 45+7+10+7*3+downGap, 'TIPO DE VOO: Treino_X_  Instrução___ Turismo___ Trabalho___ Outro___');}
@@ -769,6 +769,7 @@ function printPDF() {
 		//doc.text(210-30-12-30-10-36-7-5, 9+60+50, $('#aerodromeArrival').val(), null, 270);
 
 		doc.text(210-30-12-30-10-36-7-5*2, 9, 'Electric Flight Timer', null, 270);
+		doc.text(210-30-12-30-10-36-7-5*2, 9+44+10, 'left:'+$('#fuelQuantityLeft').val()+'l | right:'+$('#fuelQuantityLeft').val()+"l", null, 270);
 		doc.text(210-30-12-30-10-36-7-5*3, 9, 'Fuel Gauges', null, 270);
 		doc.text(210-30-12-30-10-36-7-5*4, 9, 'QNH', null, 270);
 		doc.text(210-30-12-30-10-36-7-5*5, 9, 'Wind', null, 270);
