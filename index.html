@@ -228,7 +228,7 @@
 								<td>combustível esq (litros)</td>
 								<td>direito (litros)</td>
 								<td>consumo(l/h)</td>
-								<td>observações</td>
+								
 							</tr>
 							<tr>
 								
@@ -241,10 +241,10 @@
 									</select>
 								</td>	
 								
-								<td><input class="insert1" type="text" Id="fuelQuantityLeft" maxlength = "3" min="0" max="999" placeholder="000" value="0"></td>
-								<td><input class="insert1" type="text" Id="fuelQuantityRight" maxlength = "3" min="0" max="999" placeholder="000" value="0"></td>
+								<td><input class="insert" type="text" Id="fuelQuantityLeft" maxlength = "3" min="0" max="999" placeholder="000" value="0"></td>
+								<td><input class="insert" type="text" Id="fuelQuantityRight" maxlength = "3" min="0" max="999" placeholder="000" value="0"></td>
 								<td><input class="insert" type="text" Id="fuelConsumption" maxlength = "3" min="0" max="999" placeholder="000" ></td>
-								<td><input class="insert" type="text" name="notes" Id="notes" maxlength = "140" value="circuitos" required></td>
+								
 								
 							</tr>
 						</table>
@@ -253,11 +253,13 @@
 								<td>aerodromo de partida</td>
 								<td>destino</td>
 								<td>percurso</td>
+								<td>observações</td>
 							</tr>
 							<tr id="topRow"> 
 								<td><input class="insert" type="text" Id="aerodromeDeparture" maxlength = "30"  value="LPCO" ></td>
 								<td><input class="insert" type="text" Id="aerodromeArrival" maxlength = "30" value="LPCO" ></td>
 								<td><input class="insert" type="text" name="journey" Id="journey" maxlength = "140" value="LPCO-circuitos-LPCO" required></td>
+								<td><input class="insert" type="text" name="notes" Id="notes" maxlength = "140" value="circuitos" required></td>
 							</tr>
 						</table>
 						</form>
