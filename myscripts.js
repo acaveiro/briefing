@@ -793,7 +793,7 @@ function printPDF() {
 		doc.text(30,80, 'NOTAM: ');
 		
 
-		doc.save('ProcessoDeVoo.pdf');
+		//doc.save('ProcessoDeVoo.pdf');
 
 		doc.output('dataurlnewwindow');
 		doc.autoPrint();
