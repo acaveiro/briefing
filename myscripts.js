@@ -197,20 +197,43 @@ function getNotam(aerodrome){
 }
 
 function getNotamFromNav1(){
+	
+	var aerodromes=  ['lpco', 'lpvz', 'lppn', 'lplz', 'lpav', 'lpmr', 'lpsr', 'lpjf'];
 
-	$.get('https://cors-anywhere.herokuapp.com/https://www.nav.pt/ais/contingency-briefs/national-aerodromes-lppc-fir_html').then(function (html) {
+	$.get('https://www.nav.pt/ais/contingency-briefs/national-aerodromes-lppc-fir_html').then(function (html) {
 		// Success response
 		//var $mainbar = $(html).find("h1:contains('LPCO - COIMBRA')").nextUntil("h1");
 		var x2js = new X2JS();
 		var jsonObj = x2js.xml_str2json( html );
-		var $mainbar = $(html).find("#body > div");
-		console.log($mainbar);
+		var h1s = $(html).find("h1");
+		var notamsText = "";
+		
+		h1s.each(function () {
+			var theElement = $(this);
+			var end=0;
+			if(isTheSelectedAerodrome(theElement, aerodromes)){
+					notamsText = notamsText + "\n" + theElement.text();
+					
+					while(!theElement.next().is("h1") && (theElement.next().is(".notam") || theElement.next().is(".nil"))){
+						theElement = theElement.next()
+					    notamsText = notamsText + "\n" + theElement.text();
+					}
+		}});
 		//document.write($mainbar.html());
+		console.log(notamsText);
+		return notamsText;
 	}, function () {
 		// Error response
 		document.write('Access denied');
-	});
-	
+	});	
+}
+
+function isTheSelectedAerodrome(theElement, aerodromes){
+	var i;
+	for(i=0;i< aerodromes.length;i++){
+		if(theElement.text().toLowerCase().indexOf(aerodromes[i]) >= 0){ return true;}
+	}
+	return false;
 }
 
 function getElementsByText(str, tag) {
@@ -789,10 +812,12 @@ function printPDF() {
 
 		doc.addPage();
 
-		doc.text(30,35, 'METAR: '+wordWrap(getMetar('LPMR'), 70));
-		doc.text(30,55, 'TAF: '+wordWrap(getTaf('LPMR'), 70));
-		doc.text(30,80, 'NOTAM: ');
-		
+		var str = getNotamFromNav1();
+		if(str=undefined){str="";}		
+		doc.text(30,35, 'METAR: '+ wordWrap(getMetar('LPMR'), 70));
+		doc.text(30,55, 'TAF: '+ wordWrap(getTaf('LPMR'), 70));
+		doc.text(30,80, 'NOTAM: '+ wordWrap(str, 70));
+
 
 		//doc.save('ProcessoDeVoo.pdf');
 
