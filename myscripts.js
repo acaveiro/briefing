@@ -835,7 +835,7 @@ function secondFunction(){
   
   // now wait for firstFunction to finish...
   // do something else
-	await getNotamFromNav1();
+	 getNotamFromNav1();
 };
 
 function wordWrap(str, maxWidth) {
