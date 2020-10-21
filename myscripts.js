@@ -233,7 +233,7 @@ function getNotam(aerodrome){
 	 
 	 setTimeout(function() {
    		 return notamsText;
-		}, 5000);
+		}, 10000);
 }
 
 function isTheSelectedAerodrome(theElement, aerodromes){
