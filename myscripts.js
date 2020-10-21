@@ -827,10 +827,11 @@ function printPDF() {
 	}
 }
 
-async function secondFunction(){
-  await getNotamFromNav1();
+function secondFunction(){
+  
   // now wait for firstFunction to finish...
   // do something else
+	setTimeout(await getNotamFromNav1(), 10000)
 };
 
 function wordWrap(str, maxWidth) {
