@@ -199,7 +199,7 @@ function getNotam(aerodrome){
 
  function getNotamFromNav1(){
 	
-	var aerodromes=  ['lpco', 'lpvz', 'lppn', 'lplz', 'lpav', 'lpmr', 'lpsr', 'lpjf'];
+	var aerodromes=  ['lpco', 'lpvz', 'lppn', 'lplz', 'lpav', 'lpmr', 'lpjf'];
 	var notamsText = "";
 	 $.ajaxSetup({
 	timeout:10000 // in milliseconds 
