@@ -200,7 +200,7 @@ function getNotamFromNav1(){
 	
 	var aerodromes=  ['lpco', 'lpvz', 'lppn', 'lplz', 'lpav', 'lpmr', 'lpsr', 'lpjf'];
 
-	$.get('https://www.nav.pt/ais/contingency-briefs/national-aerodromes-lppc-fir_html').then(function (html) {
+	$.get('https://cors-anywhere.herokuapp.com/https://www.nav.pt/ais/contingency-briefs/national-aerodromes-lppc-fir_html').then(function (html) {
 		// Success response
 		//var $mainbar = $(html).find("h1:contains('LPCO - COIMBRA')").nextUntil("h1");
 		var x2js = new X2JS();
