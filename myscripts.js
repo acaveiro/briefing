@@ -199,7 +199,7 @@ function getNotam(aerodrome){
  function getNotamFromNav1(){
 	
 	var aerodromes=  ['lpco', 'lpvz', 'lppn', 'lplz', 'lpav', 'lpmr', 'lpsr', 'lpjf'];
-	
+	var notamsText = "";
 	 $.ajaxSetup({
 	timeout:10000 // in milliseconds 
 	});
@@ -210,7 +210,7 @@ function getNotam(aerodrome){
 		var x2js = new X2JS();
 		var jsonObj = x2js.xml_str2json( html );
 		var h1s = $(html).find("h1");
-		var notamsText = "";
+		
 		
 		h1s.each(function () {
 			var theElement = $(this);
@@ -229,7 +229,11 @@ function getNotam(aerodrome){
 	}, function () {
 		// Error response
 		document.write('Access denied');
-	});	
+	});
+	 
+	 setTimeout(function() {
+   		 return notamsText;
+		}, 5000);
 }
 
 function isTheSelectedAerodrome(theElement, aerodromes){
