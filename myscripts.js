@@ -826,7 +826,7 @@ function printPDF() {
 		if(str=undefined){str="";}		
 		doc.text(30,35, 'METAR: '+ wordWrap(getMetar('LPMR'), 70));
 		doc.text(30,55, 'TAF: '+ wordWrap(getTaf('LPMR'), 70));
-		doc.text(30,80, 'NOTAM: '+ wordWrap(notamFuturo, 70));
+		doc.text(30,80, 'NOTAM: '+ wordWrap(notamFuturo.replace(/\\n\\n/g,'\n'), 70));
 
 
 		//doc.save('ProcessoDeVoo.pdf');
