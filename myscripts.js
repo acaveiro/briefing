@@ -201,7 +201,7 @@ function getNotam(aerodrome){
 	var aerodromes=  ['lpco', 'lpvz', 'lppn', 'lplz', 'lpav', 'lpmr', 'lpsr', 'lpjf'];
 	
 	 $.ajaxSetup({
-	timeout:2000 // in milliseconds 
+	timeout:10000 // in milliseconds 
 	});
 	 
 	$.get('https://cors-anywhere.herokuapp.com/https://www.nav.pt/ais/contingency-briefs/national-aerodromes-lppc-fir_html').then(function (html) {
