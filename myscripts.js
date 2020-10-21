@@ -196,7 +196,7 @@ function getNotam(aerodrome){
 
 }
 
-function getNotamFromNav1(){
+async function getNotamFromNav1(){
 	
 	var aerodromes=  ['lpco', 'lpvz', 'lppn', 'lplz', 'lpav', 'lpmr', 'lpsr', 'lpjf'];
 
@@ -812,11 +812,11 @@ function printPDF() {
 
 		doc.addPage();
 
-		var str = getNotamFromNav1();
+		//var str = getNotamFromNav1();
 		if(str=undefined){str="";}		
 		doc.text(30,35, 'METAR: '+ wordWrap(getMetar('LPMR'), 70));
 		doc.text(30,55, 'TAF: '+ wordWrap(getTaf('LPMR'), 70));
-		doc.text(30,80, 'NOTAM: '+ wordWrap(str, 70));
+		doc.text(30,80, 'NOTAM: '+ wordWrap(secondFunction(), 70));
 
 
 		//doc.save('ProcessoDeVoo.pdf');
@@ -826,6 +826,12 @@ function printPDF() {
 
 	}
 }
+
+async function secondFunction(){
+  await getNotamFromNav1();
+  // now wait for firstFunction to finish...
+  // do something else
+};
 
 function wordWrap(str, maxWidth) {
     var newLineStr = "\n"; done = false; res = '';
