@@ -331,6 +331,7 @@ function printPDF() {
 
 	var operationTypeSelected = $( "#operationType option:selected" ).text();
 	var fuelTotal = (parseInt($("#fuelQuantityLeft" ).val())+parseInt($("#fuelQuantityRight" ).val())).toFixed(2);			
+	var duration = timeCalculating($('#ETD').val(),$('#ETA').val());
 	var basicEmptyWeight = 1169;
 	var armBasicEmptyWeight = 73.2;
 	var armPilotAndPAX = 85.5;
@@ -879,7 +880,7 @@ function printPDF() {
 			doc.text(7+120+10, 27+7+20, 'Voo:');
 			doc.text(7+120+10+17, 27+7+20, $('#mission').val());
 			doc.text(7+120+10, 27+7+20, 'Tempo Estimado:');
-			doc.text(7+120+10+17, 27+7+20, $('#duration').val());
+			doc.text(7+120+10+17, 27+7+20, duration);
 			doc.text(7+120+10, 27+7+20, 'Peso AP (kg):');
 			doc.text(7+120+10+17, 27+7+20, $('#passengerWeight2').val());
 			doc.text(7+120+10, 27+7+20, 'Peso AP (kg):');
@@ -1119,3 +1120,33 @@ function getPICLicence(){
 	if($('#passenger4IsPIC').is(':checked')) return $('#passengerLicenceNumber4').val();
 	if($('#passenger5IsPIC').is(':checked')) return $('#passengerLicenceNumber5').val();
 }
+
+function timeCalculating(time1Raw, time2Raw)
+  {
+    var time1 = time1Raw;
+    var time2 =time2Raw;
+    var time1 = time1.split(':');
+    var time2 = time2.split(':');
+    var hours1 = parseInt(time1[0], 10), 
+    hours2 = parseInt(time2[0], 10),
+    mins1 = parseInt(time1[1], 10),
+    mins2 = parseInt(time2[1], 10);
+    var hours = hours2 - hours1, mins = 0;
+    if(hours < 0) hours = 24 + hours;
+    if(mins2 >= mins1) {
+        mins = mins2 - mins1;
+    }
+    else {
+      mins = (mins2 + 60) - mins1;
+      hours--;
+    }
+    if(mins < 9)
+    {
+      mins = '0'+mins;
+    }
+    if(hours < 9)
+    {
+      hours = '0'+hours;
+    }
+		return hours+':'+mins;
+  }
