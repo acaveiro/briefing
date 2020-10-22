@@ -317,6 +317,14 @@ function httpGet(theUrl)
     return xmlHttp.responseText;
 }
 
+function printProcess(){
+	if($('input[name="cardAndJacket"]:checked') && $('input[name="fuelPaper"]:checked') && $('input[name="missionPaper"]:checked') ){
+		printPDF();
+	}else{
+	   alert("Faltam Pré Requesitos");
+	}
+}
+
 function printPDF() {
 
 	window.onload = function() { window.print(); }
