@@ -4,30 +4,40 @@
 });
 
 var trace1 = {
-	x: [1, 2, 3, 4],
-	y: [10, 15, 13, 17],
+	x: [76],
+	y: [1600],
 	mode: 'markers',
-	name: 'Scatter'
+	name: 'Scatter',
+	 marker: {
+		color: 'rgb(255,0,0)',
+		size: 12
+	  }
   };
   
   var trace2 = {
 	x: [72.4, 72.4, 73.4, 78.5,78.5],
 	y: [1000,1270,1670,1670,1000],
 	mode: 'lines',
-	name: 'Lines'
+	name: 'Lines',
+	line: {
+		color: 'rgb(30,144,255,1)',
+		width: 4
+	  }
   };
   
-  var data = [ trace2];
+  var data = [trace1, trace2];
   
   var layout = {
-	title: 'Title of the Graph',
+	title: 'Weight & Balance',
 	  xaxis: {
 		range: [70,80],
-		autorange: false
+		autorange: false,
+		 title:"AFT DATUM (in)"
 	  },
 	  yaxis: {
 		range: [950,2000],
-		autorange: false
+		autorange: false,
+		title:"WEIGHT (lbs)"
 	  },
 	  width: 800,
 	  height: 500,
