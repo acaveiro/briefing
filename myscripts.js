@@ -905,9 +905,9 @@ doc.fromHTML(elementHTML, 15, 15, {
 
 
 
-/*doc.fromHTML($('#myDiv').get(0),20,20,{
+doc.fromHTML($('#myDiv').get(0),20,20,{
 	width:500
-	})*/
+	})
 			
 			doc.setFontSize(25);
 			doc.setTextColor(50);
