@@ -3,43 +3,29 @@
     $('input[type="checkbox"]').not(this).prop('checked', false);      
 });
 
-
-var buyerData = new Chart(ctx, {
-    type: 'line',
-    data: {
-        datasets: [{
-            data: [20, 50, 100, 75, 25, 0],
-            label: 'Left dataset',
-
-            // This binds the dataset to the left y axis
-            yAxisID: 'left-y-axis'
-        }, {
-            data: [0.1, 0.5, 1.0, 2.0, 1.5, 0],
-            label: 'Right dataset',
-
-            // This binds the dataset to the right y axis
-            yAxisID: 'right-y-axis'
-        }],
-        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun']
-    },
-    options: {
-        scales: [{
-            'left-y-axis': {
-                type: 'linear',
-                position: 'left'
-            },
-            'right-y-axis': {
-                type: 'linear',
-                position: 'right'
-            }]
-        }
-    }
-});
-
-	// get line chart canvas
-	var buyers = document.getElementById('buyers').getContext('2d');
-	// draw line chart
-	new Chart(buyers).Line(buyerData);
+var trace1 = {
+	x: [1, 2, 3, 4],
+	y: [10, 15, 13, 17],
+	mode: 'markers'
+  };
+  
+  var trace2 = {
+	x: [2, 3, 4, 5],
+	y: [16, 5, 11, 10],
+	mode: 'lines'
+  };
+  
+  var trace3 = {
+	x: [1, 2, 3, 4],
+	y: [12, 9, 15, 12],
+	mode: 'lines+markers'
+  };
+  
+  var data = [ trace1, trace2, trace3 ];
+  
+  var layout = {};
+  
+  Plotly.newPlot('myDiv', data, layout, {showSendToCloud: true});
 	       
 
 var now = new Date();
