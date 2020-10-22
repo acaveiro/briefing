@@ -330,6 +330,13 @@ function printPDF() {
 	//editweightExcel();
 
 	var operationTypeSelected = $( "#operationType option:selected" ).text();
+	var fuelTotal = (parseInt($("#fuelQuantityLeft" ).val())+parseInt($("#fuelQuantityRight" ).val())).toFixed(2);			
+	var basicEmptyWeight = 1169;
+	var armBasicEmptyWeight = 73.2;
+	var armPilotAndPAX = 85.5;
+	var armFuel = 75.4;
+	var armBaggage = 115;
+	var armUsedFuel = 75.4
 
 	if ( /*checkInput(supplier, nomeFornecedor, order, comment, articleReference, boxesPerPallet, numberOfPallets, numberOfFirstPallet, numberOfTableLines )*/ true == false ){
 		alert("Dados Inseridos inválidos! / Input data not allowed!");
@@ -847,10 +854,10 @@ function printPDF() {
 
 
 			// caixa documentos
-			doc.line(30, 297-90-100, 210-30, 297-90-100);
-			doc.line(30, 297-20-100, 210-30, 297-20-100);
-			doc.line(30, 297-90-100, 30, 297-20-100);
-			doc.line(210-30, 297-90, 210-30, 297-20);
+			doc.line(30, 297-90-170, 210-30, 297-90-170);
+			doc.line(30, 297-20-170, 210-30, 297-20-170);
+			doc.line(30, 297-90-170, 30, 297-20-170);
+			doc.line(210-30, 297-90-170, 210-30, 297-20-170);
 
 			// caixa documentos
 			doc.line(30, 297-90, 210-30, 297-90);
@@ -858,26 +865,33 @@ function printPDF() {
 			doc.line(30, 297-90, 30, 297-20);
 			doc.line(210-30, 297-90, 210-30, 297-20);
 			
-			doc.setFontSize(10);
+			doc.setFontSize(20);
 			doc.setTextColor(50);
+			doc.setFontType('bold');
 
 			doc.addImage(logoACC, 'PNG', 25, 10 , 25, 20);
 
-			doc.text(7+120+10+5, 27, 'Peso e Centragem');
-			doc.text(7+120+10+5, 27+7+6, 'PIPER PA38-112 TOMAHAWK CS-DIM');
+			doc.text(120, 27, 'Peso e Centragem');
+			doc.text(120, 27+7+6, 'PIPER PA38-112 TOMAHAWK CS-DIM');
 			  
 			doc.text(7+120+10, 27+7+20, 'Data:');
 			doc.text(7+120+10+17, 27+7+20, $('#datePicker').val());
-			doc.text(7+120+10+5, 27+7+6, 'O INSTRUTOR');
-			doc.text(7+120+10+17, 27+7+7+4, '_______________');
-
-			doc.setFontType('bold');
+			doc.text(7+120+10, 27+7+20, 'Voo:');
+			doc.text(7+120+10+17, 27+7+20, $('#mission').val());
+			doc.text(7+120+10, 27+7+20, 'Tempo Estimado:');
+			doc.text(7+120+10+17, 27+7+20, $('#duration').val());
+			doc.text(7+120+10, 27+7+20, 'Peso AP (kg):');
+			doc.text(7+120+10+17, 27+7+20, $('#passengerWeight2').val());
+			doc.text(7+120+10, 27+7+20, 'Peso AP (kg):');
+			doc.text(7+120+10+17, 27+7+20, $('#passengerWeight1').val());
+			doc.text(7+120+10, 27+7+20, 'Bagagem(kg) Max 45:');
+			doc.text(7+120+10+17, 27+7+20, $('#luggage').val());
+			doc.text(7+120+10, 27+7+20, 'Combustível(l) Max 113:');
+			doc.text(7+120+10+17, 27+7+20, fuelTotal);
+			
 			doc.setFontSize(25);
 			doc.setTextColor(50);
-			doc.text(210/2-20, 100-7, 'PROCESSO');
-			doc.text(210/2-15+15, 100, 'DE');
-			doc.text(210/2-15+10+2.5, 100+7, 'VOO');
-
+		
 			doc.setFontType('bold');
 			doc.setFontSize(13);
 			doc.setTextColor(50);
