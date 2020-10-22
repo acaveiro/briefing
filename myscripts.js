@@ -28,11 +28,11 @@ window.onload = function () {
 			xValueFormatString: "##.#",
 			yValueFormatString: "####",
 			dataPoints: [        
-				{ x: 1000, y: 72.4, indexLabel: "gain", markerType: "triangle",  markerColor: "#6B8E23" },
-				{ x: 1270, y: 72.4, indexLabel: "gain", markerType: "triangle",  markerColor: "#6B8E23" },
-				{ x: 1670 , y: 73.4, indexLabel: "loss", markerType: "cross", markerColor: "tomato" },
-				{ x: 1670 , y: 78.5, indexLabel: "loss", markerType: "cross", markerColor: "tomato" },
-				{ x: 1000 , y: 78.5, indexLabel: "gain", markerType: "triangle", markerColor: "#6B8E23" },
+				{ x: 1000, y: 72.4,   markerColor: "#6B8E23" },
+				{ x: 1270, y: 72.4,   markerColor: "#6B8E23" },
+				{ x: 1670 , y: 73.4,  markerColor: "#6B8E23" },
+				{ x: 1670 , y: 78.5,  markerColor: "#6B8E23" },
+				{ x: 1000 , y: 78.5,  markerColor: "#6B8E23" },
 				
 			]
 		}]
