@@ -31,7 +31,8 @@ window.onload = function () {
 			]
 		}]
 	});
-chart.render();
+	chart.render();
+}
 
 var now = new Date();
 var utc = new Date(now.getTime() + now.getTimezoneOffset() * 60000 + 1800000);
