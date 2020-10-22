@@ -14,7 +14,7 @@ window.onload = function () {
 		},
 		axisX: {
 			interval: 1,
-			valueFormatString: "#0"
+			valueFormatString: "#0",
 			title: "AFT DATUM (in)",
 		},
 		axisY:{
