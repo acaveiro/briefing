@@ -869,7 +869,7 @@ function printPDF() {
 			doc.text(7+120+10, 27+7+20, 'Data:');
 			doc.text(7+120+10+17, 27+7+20, $('#datePicker').val());
 			doc.text(7+120+10+5, 27+7+6, 'O INSTRUTOR');
-			doc.text(7+120+10+17, 27+7+7+4, '_______________');*/
+			doc.text(7+120+10+17, 27+7+7+4, '_______________');
 
 			doc.setFontType('bold');
 			doc.setFontSize(25);
