@@ -28,6 +28,11 @@ h1{
     	margin-left: 45%
 }
 
+.requirements input{
+	width:10%;	
+	height:10%;
+}
+
 #menu{
 	/*background-image:url(resources/boxes.png) ;
 	background-repeat: no-repeat;
