@@ -362,7 +362,8 @@ function printPDF() {
 			doc.line(210-30, 297-90, 210-30, 297-20);
 
 			
-
+			doc.setFontSize(10);
+			doc.setTextColor(50);
 
 			doc.addImage(logoACC, 'PNG', 50, 25 , 50, 40);
 
@@ -741,7 +742,8 @@ function printPDF() {
 		doc.addPage()
 
 
-
+		doc.setFontSize(25);
+		doc.setTextColor(50);
 		
 		doc.addImage(logoRotate90, 'PNG', 210-30, 12, 20, 30);
 		
