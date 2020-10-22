@@ -1,5 +1,5 @@
 
- $(document).on('click', 'input[type="checkbox"]', function() {      
+ $(document).on('click', '#palletsDetails input[type="checkbox"]', function() {      
     $('input[type="checkbox"]').not(this).prop('checked', false);      
 });
 
