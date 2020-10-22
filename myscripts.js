@@ -39,8 +39,8 @@ var trace1 = {
 		autorange: false,
 		title:"WEIGHT (lbs)"
 	  },
-	  width: 800,
-	  height: 500,
+	  width: 700,
+	  height: 400,
   };
   
   Plotly.newPlot('myDiv', data, layout);
