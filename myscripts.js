@@ -841,7 +841,7 @@ function printPDF() {
 		doc.text(30,55, 'TAF: '+ wordWrap(getTaf('LPMR'), 70));
 		doc.text(30,80, 'NOTAM: '+ wordWrap(notamFuturo.replace(/\n\n/g,'\n'), 70));
 
-
+		doc.addPage();
 //---------------WEIGHT AND BALANCE----------
 
 					//-+-------------------------------------------------- Capa
@@ -954,7 +954,7 @@ function printPDF() {
 			checkBox3.value = 'Yes'
 			doc.addField(checkBox3);
 
-			doc.addPage();
+		
 
 
 
