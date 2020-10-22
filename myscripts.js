@@ -41,6 +41,7 @@ var trace1 = {
 	  },
 	  width: 700,
 	  height: 400,
+	  showlegend: false,
   };
   
   Plotly.newPlot('myDiv', data, layout);
