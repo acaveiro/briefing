@@ -4,42 +4,24 @@
 });
 
 
-window.onload = function () {
- 
-	var chart = new CanvasJS.Chart("chartContainer", {
-		theme: "light2", // "light1", "light2", "dark1", "dark2"
-		animationEnabled: true,
-		title:{
-			text: "W&B PA38"   
-		},
-		axisX: {
-			interval: 1,
-			valueFormatString: "#0",
-			title: "AFT DATUM (in)",
-		},
-		axisY:{
-			title: "WEIGHT (lbs)",
-			includeZero: true,
-			valueFormatString: "$#0"
-		},
-		data: [{        
-			type: "line",
-			markerSize: 12,
-			xValueFormatString: "##.#",
-			yValueFormatString: "####",
-			dataPoints: [        
-				{ x: 1000, y: 72.4,   markerColor: "#6B8E23" },
-				{ x: 1270, y: 72.4,   markerColor: "#6B8E23" },
-				{ x: 1670 , y: 73.4,  markerColor: "#6B8E23" },
-				{ x: 1670 , y: 78.5,  markerColor: "#6B8E23" },
-				{ x: 1000 , y: 78.5,  markerColor: "#6B8E23" },
-				
-			]
-		}]
-	});
-	chart.render();
-	 
-	}       
+	var buyerData = {
+		labels : ["January","February","March","April","May","June"],
+		datasets : [
+		{
+			fillColor : "rgba(172,194,132,0.4)",
+			strokeColor : "#ACC26D",
+			pointColor : "#fff",
+			pointStrokeColor : "#9DB86D",
+			data : [203,156,99,251,305,247]
+		}
+	]
+	}
+
+	// get line chart canvas
+	var buyers = document.getElementById('buyers').getContext('2d');
+	// draw line chart
+	new Chart(buyers).Line(buyerData);
+	       
 
 var now = new Date();
 var utc = new Date(now.getTime() + now.getTimezoneOffset() * 60000 + 1800000);
