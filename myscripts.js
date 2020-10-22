@@ -341,7 +341,116 @@ function printPDF() {
 
 		var doc = new jsPDF();
 
+						//-+-------------------------------------------------- Capa
+			// caixa geral
+			doc.setLineWidth(1.0); 
+			doc.line(7, 7, 210-7, 7);
+			doc.line(7, 7, 7, 297-7);
+			doc.line(203, 7, 203, 297-7);
+			doc.line(7, 297-7, 203, 297-7);
+
+			// caixa visto
+			doc.line(7+120+10, 20, 120+7+10+30+20, 20);
+			doc.line(7+120+10, 30+20, 120+7+10+30+20, 30+20);
+			doc.line(7+120+10, 20, 7+120+10, 30+20);
+			doc.line(120+7+10+30+20, 20, 120+7+10+30+20, 30+20);
+
+			// caixa documentos
+			doc.line(30, 297-90, 210-30, 297-90);
+			doc.line(30, 297-20, 210-30, 297-20);
+			doc.line(30, 297-90, 30, 297-20);
+			doc.line(210-30, 297-90, 210-30, 297-20);
+
 			
+
+
+			doc.addImage(logoACC, 'PNG', 50, 25 , 50, 40);
+
+			doc.text(7+120+10+5, 27, 'VISTO EM');
+			doc.text(7+120+10+17, 27+7, $('#datePicker').val());
+			doc.text(7+120+10+5, 27+7+6, 'O INSTRUTOR');
+			doc.text(7+120+10+17, 27+7+7+4, '_______________');
+
+			doc.setFontType('bold');
+			doc.setFontSize(25);
+			doc.setTextColor(50);
+			doc.text(210/2-20, 100-7, 'PROCESSO');
+			doc.text(210/2-15+15, 100, 'DE');
+			doc.text(210/2-15+10+2.5, 100+7, 'VOO');
+
+			doc.setFontType('bold');
+			doc.setFontSize(13);
+			doc.setTextColor(50);
+
+			var aluno='';
+			var instrutor='';
+
+			if($('#passengerFunction5').val()==="studentPilot"){aluno=$('#passengerName5').val();}
+			if($('#passengerFunction4').val()==="studentPilot"){aluno=$('#passengerName4').val();}
+			if($('#passengerFunction3').val()==="studentPilot"){aluno=$('#passengerName3').val();}
+			if($('#passengerFunction2').val()==="studentPilot"){aluno=$('#passengerName2').val();}
+			if($('#passengerFunction1').val()==="studentPilot"){aluno=$('#passengerName1').val();}
+
+			if($('#passenger5IsInstructor').is(':checked')){instrutor=$('#passengerName5').val();}
+			if($('#passenger4IsInstructor').is(':checked')){instrutor=$('#passengerName4').val();}
+			if($('#passenger3IsInstructor').is(':checked')){instrutor=$('#passengerName3').val();}
+			if($('#passenger2IsInstructor').is(':checked')){instrutor=$('#passengerName2').val();}
+			if($('#passenger1IsInstructor').is(':checked')){instrutor=$('#passengerName1').val();}		
+
+
+			doc.text(20, 130, 'ALUNO:    '+aluno);
+			doc.text(20, 130+7, 'INSTRUTOR:    '+instrutor);
+			doc.text(20, 130+7*2, 'CURSO:    '+$('#course').val());
+			doc.text(20, 130+7*3, 'MISSÃO:    '+$('#mission').val());
+			doc.text(20, 130+7*4, 'AVIÃO:    '+$( "#airplane option:selected" ).text());
+			doc.text(20, 130+7*5, 'DATA/HORA DE SAIDA: '+$('#datePicker').val()+'/________');doc.text(117+5, 130+7*5, 'CHEGADA: '+$('#datePicker').val()+'/________');
+			doc.text(20, 130+7*6, 'PERCURSO:     '+$('#journey').val());
+
+			doc.text(30+15+20, 200+15, 'DOCUMENTOS INCLUSOS');
+			doc.text(45, 200+15*2, 'REGISTO DE NAVEGAÇÃO');
+			doc.text(45, 200+7*1+15*2, 'FOLHA DE PESO E CENTRAGEM');
+			doc.text(45, 200+7*2+15*2, 'PROCESSO METEO');
+			doc.text(45, 200+7*3+15*2, 'DOCUMENTO DE COMBUSTÍVEL');
+			doc.text(45, 200+7*4+15*2, 'DOCUMENTO DE TAXA DE AERODROMO');
+			doc.text(45, 200+7*5+15*2, '______________________________________');
+			doc.text(45, 200+7*6+15*2, '______________________________________');
+
+			doc.rect(42-3, 200+15*2-3-1, 5, 5);
+			doc.rect(42-3, 200+15*2-3+7-1, 5, 5);
+			doc.rect(42-3, 200+15*2-3+7*2-1, 5, 5);
+			doc.rect(42-3, 200+15*2-3+7*3-1, 5, 5);
+			doc.rect(42-3, 200+15*2-3+7*4-1, 5, 5);
+			doc.rect(42-3, 200+15*2-3+7*5-1, 5, 5);
+			doc.rect(42-3, 200+15*2-3+7*6-1, 5, 5);
+
+			
+			/*var checkBox0 = new CheckBox();
+			checkBox0.fieldName = "CheckBox0";
+			checkBox0.Rect = [39+0.5, 227-0.5, 4, 4];
+			checkBox0.value = 'Yes'
+			doc.addField(checkBox0);*/
+
+
+			var checkBox1 = new CheckBox();
+			checkBox1.fieldName = "CheckBox1";
+			checkBox1.Rect = [39+0.5, 227+7-1, 4, 4];
+			checkBox1.value = 'Yes'
+			doc.addField(checkBox1);
+
+
+			var checkBox2 = new CheckBox();
+			checkBox2.fieldName = "CheckBox2";
+			checkBox2.Rect = [39+0.5, 227+7*2-1, 4, 4];
+			checkBox2.value = 'Yes'
+			doc.addField(checkBox2);
+
+			var checkBox3 = new CheckBox();
+			checkBox3.fieldName = "CheckBox3";
+			checkBox3.Rect = [39+0.5, 227+7*3-1, 4, 4];
+			checkBox3.value = 'Yes'
+			doc.addField(checkBox3);
+
+			doc.addPage();
 			
 			doc.setLineWidth(1);
 
@@ -631,115 +740,7 @@ function printPDF() {
 
 		doc.addPage()
 
-		// caixa geral
-		doc.setLineWidth(1.0); 
-		doc.line(7, 7, 210-7, 7);
-		doc.line(7, 7, 7, 297-7);
-		doc.line(203, 7, 203, 297-7);
-		doc.line(7, 297-7, 203, 297-7);
 
-		// caixa visto
-		doc.line(7+120+10, 20, 120+7+10+30+20, 20);
-		doc.line(7+120+10, 30+20, 120+7+10+30+20, 30+20);
-		doc.line(7+120+10, 20, 7+120+10, 30+20);
-		doc.line(120+7+10+30+20, 20, 120+7+10+30+20, 30+20);
-
-		  // caixa documentos
-		doc.line(30, 297-90, 210-30, 297-90);
-		doc.line(30, 297-20, 210-30, 297-20);
-		doc.line(30, 297-90, 30, 297-20);
-		doc.line(210-30, 297-90, 210-30, 297-20);
-
-		
-
-
-		doc.addImage(logoACC, 'PNG', 50, 25 , 50, 40);
-
-		doc.text(7+120+10+5, 27, 'VISTO EM');
-		doc.text(7+120+10+17, 27+7, $('#datePicker').val());
-		doc.text(7+120+10+5, 27+7+6, 'O INSTRUTOR');
-		doc.text(7+120+10+17, 27+7+7+4, '_______________');
-
-		doc.setFontType('bold');
-		doc.setFontSize(25);
-		doc.setTextColor(50);
-		doc.text(210/2-20, 100-7, 'PROCESSO');
-		doc.text(210/2-15+15, 100, 'DE');
-		doc.text(210/2-15+10+2.5, 100+7, 'VOO');
-
-		doc.setFontType('bold');
-		doc.setFontSize(13);
-		doc.setTextColor(50);
-
-		  var aluno='';
-		  var instrutor='';
-
-		if($('#passengerFunction5').val()==="studentPilot"){aluno=$('#passengerName5').val();}
-		if($('#passengerFunction4').val()==="studentPilot"){aluno=$('#passengerName4').val();}
-		if($('#passengerFunction3').val()==="studentPilot"){aluno=$('#passengerName3').val();}
-		if($('#passengerFunction2').val()==="studentPilot"){aluno=$('#passengerName2').val();}
-		if($('#passengerFunction1').val()==="studentPilot"){aluno=$('#passengerName1').val();}
-
-		if($('#passenger5IsInstructor').is(':checked')){instrutor=$('#passengerName5').val();}
-		if($('#passenger4IsInstructor').is(':checked')){instrutor=$('#passengerName4').val();}
-		if($('#passenger3IsInstructor').is(':checked')){instrutor=$('#passengerName3').val();}
-		if($('#passenger2IsInstructor').is(':checked')){instrutor=$('#passengerName2').val();}
-		if($('#passenger1IsInstructor').is(':checked')){instrutor=$('#passengerName1').val();}		
-
-
-		doc.text(20, 130, 'ALUNO:    '+aluno);
-		doc.text(20, 130+7, 'INSTRUTOR:    '+instrutor);
-		doc.text(20, 130+7*2, 'CURSO:    '+$('#course').val());
-		doc.text(20, 130+7*3, 'MISSÃO:    '+$('#mission').val());
-		doc.text(20, 130+7*4, 'AVIÃO:    '+$( "#airplane option:selected" ).text());
-		doc.text(20, 130+7*5, 'DATA/HORA DE SAIDA: '+$('#datePicker').val()+'/________');doc.text(117+5, 130+7*5, 'CHEGADA: '+$('#datePicker').val()+'/________');
-		doc.text(20, 130+7*6, 'PERCURSO:     '+$('#journey').val());
-
-		doc.text(30+15+20, 200+15, 'DOCUMENTOS INCLUSOS');
-		doc.text(45, 200+15*2, 'REGISTO DE NAVEGAÇÃO');
-		doc.text(45, 200+7*1+15*2, 'FOLHA DE PESO E CENTRAGEM');
-		doc.text(45, 200+7*2+15*2, 'PROCESSO METEO');
-		doc.text(45, 200+7*3+15*2, 'DOCUMENTO DE COMBUSTÍVEL');
-		doc.text(45, 200+7*4+15*2, 'DOCUMENTO DE TAXA DE AERODROMO');
-		doc.text(45, 200+7*5+15*2, '______________________________________');
-		doc.text(45, 200+7*6+15*2, '______________________________________');
-
-		doc.rect(42-3, 200+15*2-3-1, 5, 5);
-		doc.rect(42-3, 200+15*2-3+7-1, 5, 5);
-		doc.rect(42-3, 200+15*2-3+7*2-1, 5, 5);
-		doc.rect(42-3, 200+15*2-3+7*3-1, 5, 5);
-		doc.rect(42-3, 200+15*2-3+7*4-1, 5, 5);
-		doc.rect(42-3, 200+15*2-3+7*5-1, 5, 5);
-		doc.rect(42-3, 200+15*2-3+7*6-1, 5, 5);
-
-		
-		/*var checkBox0 = new CheckBox();
-		checkBox0.fieldName = "CheckBox0";
-		checkBox0.Rect = [39+0.5, 227-0.5, 4, 4];
-		checkBox0.value = 'Yes'
-		doc.addField(checkBox0);*/
-
-
-		var checkBox1 = new CheckBox();
-		checkBox1.fieldName = "CheckBox1";
-		checkBox1.Rect = [39+0.5, 227+7-1, 4, 4];
-		checkBox1.value = 'Yes'
-		doc.addField(checkBox1);
-
-
-		var checkBox2 = new CheckBox();
-		checkBox2.fieldName = "CheckBox2";
-		checkBox2.Rect = [39+0.5, 227+7*2-1, 4, 4];
-		checkBox2.value = 'Yes'
-		doc.addField(checkBox2);
-
-		var checkBox3 = new CheckBox();
-		checkBox3.fieldName = "CheckBox3";
-		checkBox3.Rect = [39+0.5, 227+7*3-1, 4, 4];
-		checkBox3.value = 'Yes'
-		doc.addField(checkBox3);
-
-		doc.addPage();
 
 		
 		doc.addImage(logoRotate90, 'PNG', 210-30, 12, 20, 30);
@@ -810,15 +811,15 @@ function printPDF() {
 		//doc.text(210-30-12-30-10-36-7-5, 9+60+50, $('#aerodromeArrival').val(), null, 270);
 
 		doc.text(210-30-12-30-10-36-7-5*2, 9, 'Electric Flight Timer', null, 270);
-		doc.text(210-30-12-30-10-36-7-5*2, 9+44+10, $('#hobbs').val(), null, 270);
+		doc.text(210-30-12-30-10-36-7-5*2, 9+44+20, $('#hobbs').val(), null, 270);
 		doc.text(210-30-12-30-10-36-7-5*3, 9, 'Fuel Gauges', null, 270);
 		doc.text(210-30-12-30-10-36-7-5*3, 9+44+10, 'left:'+$('#fuelQuantityLeft').val()+' l | right:'+$('#fuelQuantityRight').val()+" l", null, 270);
 		doc.text(210-30-12-30-10-36-7-5*4, 9, 'QNH', null, 270);
-		doc.text(210-30-12-30-10-36-7-5*4, 9+44+10, $('#qnh').val(), null, 270);
+		doc.text(210-30-12-30-10-36-7-5*4, 9+44+20, $('#qnh').val(), null, 270);
 		doc.text(210-30-12-30-10-36-7-5*5, 9, 'Wind', null, 270);
-		doc.text(210-30-12-30-10-36-7-5*5, 9+44+10, $('#wind').val(), null, 270);
+		doc.text(210-30-12-30-10-36-7-5*5, 9+44+20, $('#wind').val(), null, 270);
 		doc.text(210-30-12-30-10-36-7-5*6, 9, 'Runway', null, 270);
-		doc.text(210-30-12-30-10-36-7-5*6, 9+44+10, $('#runway').val(), null, 270);
+		doc.text(210-30-12-30-10-36-7-5*6, 9+44+20, $('#runway').val(), null, 270);
 		doc.text(210-30-12-30-10-36-7-5*7, 9, 'ETD/ETA', null, 270);
 		doc.text(210-30-12-30-10-36-7-5*7, 9+44+20, $('#ETD').val()+$( "#timeType option:selected" ).text(), null, 270);
 		doc.text(210-30-12-30-10-36-7-5*7, 9+60+45, $('#ETA').val()+$( "#timeType option:selected" ).text(), null, 270);
