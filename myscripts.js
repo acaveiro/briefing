@@ -23,7 +23,7 @@ var buyerData = new Chart(ctx, {
         labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun']
     },
     options: {
-        scales: {
+        scales: [{
             'left-y-axis': {
                 type: 'linear',
                 position: 'left'
