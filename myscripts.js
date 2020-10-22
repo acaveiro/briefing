@@ -892,7 +892,7 @@ function printPDF() {
 
 			var elementHTML = $('#myDiv').html();
 var specialElementHandlers = {
-    '#elementH': function (element, renderer) {
+    '#result': function (element, renderer) {
         return true;
     }
 };
