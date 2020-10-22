@@ -915,6 +915,10 @@ doc.fromHTML($('#myDiv').get(0),20,20,{
 			
 	doc.addImage(svg2img(), 'PNG', 100, 100 , 25, 20);
 
+var testSVG = $('.svg-container>svg').get(0).prop('outerHTML')
+
+	doc.addSvgAsImage(testSVG, 100,100,50,50);
+
 			doc.setFontSize(25);
 			doc.setTextColor(50);
 		
@@ -1146,14 +1150,6 @@ function getPICLicence(){
 	if($('#passenger5IsPIC').is(':checked')) return $('#passengerLicenceNumber5').val();
 }
 
-function svg2img(){
-    var svg = document.querySelector('svg');
-    var xml = new XMLSerializer().serializeToString(svg);
-    var svg64 = btoa(xml); //for utf8: btoa(unescape(encodeURIComponent(xml)))
-    var b64start = 'data:image/svg+xml;base64,';
-    var image64 = b64start + svg64;
-    return image64;
-};svg2img()
 
 
 function timeCalculating(time1Raw, time2Raw)
