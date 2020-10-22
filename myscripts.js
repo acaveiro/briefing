@@ -55,7 +55,9 @@ var trace1 = {
 	  showlegend: false,
   };
   
-  Plotly.newPlot('myDiv', data, layout);
+  Plotly.newPlot('myDiv', data, layout, {staticPlot: true});
+
+  
 //------------------------------------------------------------------------------------//
 
 $('#meteogram').load('https://cors-anywhere.herokuapp.com/https://www.windy.com/LPCO?40.158,-9.569,8 div.airport-meteogram');
@@ -890,7 +892,7 @@ function printPDF() {
 			doc.text(7+120+10, 27+7+20, 'Combustível(l) Max 113:');
 			doc.text(7+120+10+17, 27+7+20, fuelTotal);
 
-			var elementHTML = $('#myDiv').html();
+	/*		var elementHTML = $('#myDiv').html();
 var specialElementHandlers = {
     '#result': function (element, renderer) {
         return true;
@@ -899,7 +901,7 @@ var specialElementHandlers = {
 doc.fromHTML(elementHTML, 15, 15, {
     'width': 170,
     'elementHandlers': specialElementHandlers
-});
+});*/
 
 
 
