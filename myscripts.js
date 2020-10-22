@@ -6,26 +6,34 @@
 var trace1 = {
 	x: [1, 2, 3, 4],
 	y: [10, 15, 13, 17],
-	mode: 'markers'
+	mode: 'markers',
+	name: 'Scatter'
   };
   
   var trace2 = {
-	x: [2, 3, 4, 5],
-	y: [16, 5, 11, 10],
-	mode: 'lines'
+	x: [72.4, 72.4, 73.4, 78.5,78.5],
+	y: [1000,1270,1670,1670,1000],
+	mode: 'lines',
+	name: 'Lines'
   };
   
-  var trace3 = {
-	x: [1, 2, 3, 4],
-	y: [12, 9, 15, 12],
-	mode: 'lines+markers'
+  var data = [ trace2];
+  
+  var layout = {
+	title: 'Title of the Graph',
+	  xaxis: {
+		range: [70,80],
+		autorange: false
+	  },
+	  yaxis: {
+		range: [950,2000],
+		autorange: false
+	  },
+	  width: 800,
+	  height: 500,
   };
   
-  var data = [ trace1, trace2, trace3 ];
-  
-  var layout = {};
-  
-  Plotly.newPlot('myDiv', data, layout, {showSendToCloud: true});
+  Plotly.newPlot('myDiv', data, layout);
 	       
 
 var now = new Date();
