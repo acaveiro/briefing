@@ -10,36 +10,30 @@ window.onload = function () {
 		theme: "light2", // "light1", "light2", "dark1", "dark2"
 		animationEnabled: true,
 		title:{
-			text: "Share Value - 2016"   
+			text: "W&B PA38"   
 		},
 		axisX: {
 			interval: 1,
-			intervalType: "month",
-			valueFormatString: "MMM"
+			valueFormatString: "#0"
+			title: "AFT DATUM (in)",
 		},
 		axisY:{
-			title: "Price (in USD)",
+			title: "WEIGHT (lbs)",
 			includeZero: true,
 			valueFormatString: "$#0"
 		},
 		data: [{        
 			type: "line",
 			markerSize: 12,
-			xValueFormatString: "MMM, YYYY",
-			yValueFormatString: "$###.#",
+			xValueFormatString: "##.#",
+			yValueFormatString: "####",
 			dataPoints: [        
-				{ x: new Date(2016, 00, 1), y: 61, indexLabel: "gain", markerType: "triangle",  markerColor: "#6B8E23" },
-				{ x: new Date(2016, 01, 1), y: 71, indexLabel: "gain", markerType: "triangle",  markerColor: "#6B8E23" },
-				{ x: new Date(2016, 02, 1) , y: 55, indexLabel: "loss", markerType: "cross", markerColor: "tomato" },
-				{ x: new Date(2016, 03, 1) , y: 50, indexLabel: "loss", markerType: "cross", markerColor: "tomato" },
-				{ x: new Date(2016, 04, 1) , y: 65, indexLabel: "gain", markerType: "triangle", markerColor: "#6B8E23" },
-				{ x: new Date(2016, 05, 1) , y: 85, indexLabel: "gain", markerType: "triangle", markerColor: "#6B8E23" },
-				{ x: new Date(2016, 06, 1) , y: 68, indexLabel: "loss", markerType: "cross", markerColor: "tomato" },
-				{ x: new Date(2016, 07, 1) , y: 28, indexLabel: "loss", markerType: "cross", markerColor: "tomato" },
-				{ x: new Date(2016, 08, 1) , y: 34, indexLabel: "gain", markerType: "triangle", markerColor: "#6B8E23" },
-				{ x: new Date(2016, 09, 1) , y: 24, indexLabel: "loss", markerType: "cross", markerColor: "tomato" },
-				{ x: new Date(2016, 10, 1) , y: 44, indexLabel: "gain", markerType: "triangle", markerColor: "#6B8E23" },
-				{ x: new Date(2016, 11, 1) , y: 34, indexLabel: "loss", markerType: "cross", markerColor: "tomato" }
+				{ x: 1000, y: 72.4, indexLabel: "gain", markerType: "triangle",  markerColor: "#6B8E23" },
+				{ x: 1270, y: 72.4, indexLabel: "gain", markerType: "triangle",  markerColor: "#6B8E23" },
+				{ x: 1670 , y: 73.4, indexLabel: "loss", markerType: "cross", markerColor: "tomato" },
+				{ x: 1670 , y: 78.5, indexLabel: "loss", markerType: "cross", markerColor: "tomato" },
+				{ x: 1000 , y: 78.5, indexLabel: "gain", markerType: "triangle", markerColor: "#6B8E23" },
+				
 			]
 		}]
 	});
