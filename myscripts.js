@@ -915,7 +915,7 @@ doc.fromHTML($('#myDiv').get(0),20,20,{
 			
 //	doc.addImage(svg2img(), 'PNG', 100, 100 , 25, 20);
 
-var testSVG = $('.svg-container>svg').get(0).prop('outerHTML')
+var testSVG = $('.svg-container>svg').get(0).outerHTML;
 
 	doc.addSvgAsImage(testSVG, 100,100,50,50);
 
