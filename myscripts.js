@@ -57,7 +57,7 @@ var notamFuturo = getNotamFromNav1();
 
 $('#meteogram').load('https://cors-anywhere.herokuapp.com/https://www.windy.com/LPCO?40.158,-9.569,8 div.airport-meteogram');
 
-$('#meteogram').load('https://cors-anywhere.herokuapp.com/hhttps://www.meteoblue.com/en/weather/aviation/air/coimbra-airport_portugal_7730101 #blooimage');
+$('#meteogram').load('https://cors-anywhere.herokuapp.com/https://www.meteoblue.com/en/weather/aviation/air/coimbra-airport_portugal_7730101 #blooimage');
 
 document.getElementById('datePicker').valueAsDate = new Date();
 
