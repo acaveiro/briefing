@@ -810,11 +810,15 @@ function printPDF() {
 		//doc.text(210-30-12-30-10-36-7-5, 9+60+50, $('#aerodromeArrival').val(), null, 270);
 
 		doc.text(210-30-12-30-10-36-7-5*2, 9, 'Electric Flight Timer', null, 270);
+		doc.text(210-30-12-30-10-36-7-5*2, 9+44+10, $(#hobbs').val(), null, 270);
 		doc.text(210-30-12-30-10-36-7-5*3, 9, 'Fuel Gauges', null, 270);
 		doc.text(210-30-12-30-10-36-7-5*3, 9+44+10, 'left:'+$('#fuelQuantityLeft').val()+' l | right:'+$('#fuelQuantityRight').val()+" l", null, 270);
 		doc.text(210-30-12-30-10-36-7-5*4, 9, 'QNH', null, 270);
+		doc.text(210-30-12-30-10-36-7-5*4, 9+44+10, $(#qnh').val(), null, 270);
 		doc.text(210-30-12-30-10-36-7-5*5, 9, 'Wind', null, 270);
+		doc.text(210-30-12-30-10-36-7-5*5, 9+44+10, $(#wind').val(), null, 270);
 		doc.text(210-30-12-30-10-36-7-5*6, 9, 'Runway', null, 270);
+		doc.text(210-30-12-30-10-36-7-5*6, 9+44+10, $(#runway').val(), null, 270);
 		doc.text(210-30-12-30-10-36-7-5*7, 9, 'ETD/ETA', null, 270);
 		doc.text(210-30-12-30-10-36-7-5*7, 9+44+20, $('#ETD').val()+$( "#timeType option:selected" ).text(), null, 270);
 		doc.text(210-30-12-30-10-36-7-5*7, 9+60+45, $('#ETA').val()+$( "#timeType option:selected" ).text(), null, 270);
