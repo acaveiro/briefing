@@ -844,36 +844,32 @@ function printPDF() {
 		doc.addPage();
 //---------------WEIGHT AND BALANCE----------
 
-					//-+-------------------------------------------------- Capa
-			// caixa geral
-			doc.setLineWidth(1.0); 
-			doc.line(7, 7, 210-7, 7);
-			doc.line(7, 7, 7, 297-7);
-			doc.line(203, 7, 203, 297-7);
-			doc.line(7, 297-7, 203, 297-7);
 
-			// caixa visto
-			doc.line(7+120+10, 20, 120+7+10+30+20, 20);
-			doc.line(7+120+10, 30+20, 120+7+10+30+20, 30+20);
-			doc.line(7+120+10, 20, 7+120+10, 30+20);
-			doc.line(120+7+10+30+20, 20, 120+7+10+30+20, 30+20);
+
+			// caixa documentos
+			doc.line(30, 297-90-100, 210-30, 297-90-100);
+			doc.line(30, 297-20-100, 210-30, 297-20-100);
+			doc.line(30, 297-90-100, 30, 297-20-100);
+			doc.line(210-30, 297-90, 210-30, 297-20);
 
 			// caixa documentos
 			doc.line(30, 297-90, 210-30, 297-90);
 			doc.line(30, 297-20, 210-30, 297-20);
 			doc.line(30, 297-90, 30, 297-20);
 			doc.line(210-30, 297-90, 210-30, 297-20);
-
 			
 			doc.setFontSize(10);
 			doc.setTextColor(50);
 
-			doc.addImage(logoACC, 'PNG', 50, 25 , 50, 40);
+			doc.addImage(logoACC, 'PNG', 25, 10 , 25, 20);
 
-			doc.text(7+120+10+5, 27, 'VISTO EM');
-			doc.text(7+120+10+17, 27+7, $('#datePicker').val());
+			doc.text(7+120+10+5, 27, 'Peso e Centragem');
+			doc.text(7+120+10+5, 27+7+6, 'PIPER PA38-112 TOMAHAWK CS-DIM');
+			  
+			doc.text(7+120+10, 27+7+20, 'Data:');
+			doc.text(7+120+10+17, 27+7+20, $('#datePicker').val());
 			doc.text(7+120+10+5, 27+7+6, 'O INSTRUTOR');
-			doc.text(7+120+10+17, 27+7+7+4, '_______________');
+			doc.text(7+120+10+17, 27+7+7+4, '_______________');*/
 
 			doc.setFontType('bold');
 			doc.setFontSize(25);
