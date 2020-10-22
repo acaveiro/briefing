@@ -902,12 +902,12 @@ function printPDF() {
 			doc.text(7+120+10, 27+7+20, 'Combustível(l) Max 113:');
 			doc.text(7+120+10+17, 27+7+20, fuelTotal);
 
-			var svg = $('.svg-container > svg').get(0);
+			/*var svg = $('.svg-container > svg').get(0);
 
 			svgElementToPdf(svg, pdf, {
 				scale: 72/96, // this is the ratio of px to pt units
 				removeInvalid: true // this removes elements that could not be translated to pdf from the source svg
-			});
+			});*/
 /*
 doc.fromHTML($('#myDiv').get(0),20,20,{
 	width:500
