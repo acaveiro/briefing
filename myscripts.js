@@ -892,7 +892,7 @@ function printPDF() {
 			doc.text(7+120+10, 27+7+20, 'Combustível(l) Max 113:');
 			doc.text(7+120+10+17, 27+7+20, fuelTotal);
 
-	/*		var elementHTML = $('#myDiv').html();
+			var elementHTML = $('#myDiv').html();
 var specialElementHandlers = {
     '#result': function (element, renderer) {
         return true;
@@ -901,13 +901,13 @@ var specialElementHandlers = {
 doc.fromHTML(elementHTML, 15, 15, {
     'width': 170,
     'elementHandlers': specialElementHandlers
-});*/
+});
 
 
-
+/*
 doc.fromHTML($('#myDiv').get(0),20,20,{
 	width:500
-	})
+	})*/
 			
 			doc.setFontSize(25);
 			doc.setTextColor(50);
