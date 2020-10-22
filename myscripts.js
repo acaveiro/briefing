@@ -917,7 +917,7 @@ doc.fromHTML($('#myDiv').get(0),20,20,{
 
 var testSVG = $('.svg-container>svg').get(0).outerHTML;
 
-	doc.addSvgAsImage(testSVG, 100,100,50,50);
+	doc.addSvg(testSVG, 100,100,50,50);
 
 			doc.setFontSize(25);
 			doc.setTextColor(50);
