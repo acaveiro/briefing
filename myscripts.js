@@ -54,6 +54,16 @@ var trace1 = {
 	  height: 400,
 	  showlegend: false,
   };
+
+  var config = {
+	toImageButtonOptions: {
+	  format: 'svg', // one of png, svg, jpeg, webp
+	  filename: 'custom_image',
+	  height: 500,
+	  width: 700,
+	  scale: 1 // Multiply title/legend/axis/canvas sizes by this factor
+	}
+  };
   
   Plotly.newPlot('myDiv', data, layout, {staticPlot: true});
 
@@ -892,18 +902,12 @@ function printPDF() {
 			doc.text(7+120+10, 27+7+20, 'Combustível(l) Max 113:');
 			doc.text(7+120+10+17, 27+7+20, fuelTotal);
 
-			var elementHTML = $('#myDiv').html();
-var specialElementHandlers = {
-    '#result': function (element, renderer) {
-        return true;
-    }
-};
-doc.fromHTML(elementHTML, 15, 15, {
-    'width': 170,
-    'elementHandlers': specialElementHandlers
-});
+			var svg = $('.svg-container > svg').get(0);
 
-
+			svgElementToPdf(svg, pdf, {
+				scale: 72/96, // this is the ratio of px to pt units
+				removeInvalid: true // this removes elements that could not be translated to pdf from the source svg
+			});
 /*
 doc.fromHTML($('#myDiv').get(0),20,20,{
 	width:500
