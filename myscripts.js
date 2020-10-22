@@ -742,7 +742,7 @@ function printPDF() {
 		doc.addPage()
 
 
-		doc.setFontSize(25);
+		doc.setFontSize(15);
 		doc.setTextColor(50);
 		
 		doc.addImage(logoRotate90, 'PNG', 210-30, 12, 20, 30);
