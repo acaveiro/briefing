@@ -318,7 +318,7 @@ function httpGet(theUrl)
 }
 
 function printProcess(){
-	if($('input[name="cardAndJacket"]:checked') && $('input[name="fuelPaper"]:checked') && $('input[name="missionPaper"]:checked') ){
+	if($('input[name="cardAndJacket"]').is(':checked') && $('input[name="fuelPaper"]').is(':checked') && $('input[name="missionPaper"]').is(':checked') ){
 		printPDF();
 	}else{
 	   alert("Faltam Pré Requesitos");
