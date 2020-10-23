@@ -930,7 +930,7 @@ var testSVG = $('.svg-container>svg').get(0).innerHTML;
   context.clearRect(0, 0, canvas.width, canvas.height);
   canvg(canvas, testSVG);
   var imgData2 = canvas.toDataURL('image/png');
-  doc.addImage(imgData, 'PNG', 40, 40, 75, 75);
+  doc.addImage(imgData2, 'PNG', 40, 40, 75, 75);
 
 			doc.setFontSize(25);
 			doc.setTextColor(50);
