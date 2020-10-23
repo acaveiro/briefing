@@ -928,7 +928,7 @@ var testSVG = $('.svg-container>svg').get(0).innerHTML;
 
   var context = canvas.getContext('2d');
   context.clearRect(0, 0, canvas.width, canvas.height);
-  canvg(canvas, svg);
+  canvg(canvas, testSVG);
   var imgData2 = canvas.toDataURL('image/png');
   doc.addImage(imgData, 'PNG', 40, 40, 75, 75);
 
