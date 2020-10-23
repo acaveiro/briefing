@@ -927,7 +927,7 @@ var testSVG = $('.svg-container>svg').get(0).innerHTML;
   var canvas = document.createElement('canvas');
   canvg(canvas, testSVG);
   var imgData1 = canvas.toDataURL('image/png');
-  doc.addImage(image64, 'PNG', 40, 40, 75, 75);
+  doc.addImage(imgData1, 'PNG', 40, 40, 75, 75);
 
 
 			doc.setFontSize(25);
