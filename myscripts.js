@@ -918,14 +918,24 @@ doc.fromHTML($('#myDiv').get(0),20,20,{
 var testSVG = $('.svg-container>svg').get(0).innerHTML;
 
 
-  if (testSVG){
+var xml = new XMLSerializer().serializeToString(testSVG);
+
+// make it base64
+var svg64 = btoa(xml);
+var b64Start = 'data:image/svg+xml;base64,';
+
+// prepend a "header"
+var image64 = b64Start + svg64;
+
+
+ /* if (testSVG){
   	testSVG = testSVG.replace(/\r?\n|\r/g, '').trim();
   }
 
   var canvas = document.createElement('canvas');
   canvg(canvas, testSVG);
-  var imgData1 = canvas.toDataURL('image/png');
-  doc.addImage(imgData, 'PNG', 40, 40, 75, 75);
+  var imgData1 = canvas.toDataURL('image/png');*/
+  doc.addImage(image64, 'PNG', 40, 40, 75, 75);
 
 
 			doc.setFontSize(25);
