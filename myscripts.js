@@ -915,23 +915,24 @@ doc.fromHTML($('#myDiv').get(0),20,20,{
 			
 //	doc.addImage(svg2img(), 'PNG', 100, 100 , 25, 20);
 
-var testSVG = $('.svg-container>svg').get(0).innerHTML;
+/*var testSVG = $('.svg-container>svg').get(0).innerHTML;
 
   if (testSVG){
   	testSVG = testSVG.replace(/\r?\n|\r/g, '').trim();
   }
-
-  var canvas = document.createElement('canvas');
+*/
+  
   /*canvg(canvas, testSVG);
   var imgData1 = canvas.toDataURL('image/png');
   doc.addImage(imgData1, 'PNG', 40, 40, 75, 75);*/
 
+  /*var canvas = document.createElement('canvas');
   var context = canvas.getContext('2d');
   context.clearRect(0, 0, canvas.width, canvas.height);
   canvg(canvas, testSVG);
   var imgData2 = canvas.toDataURL('image/png');
   doc.addImage(imgData2, 'PNG', 40, 40, 75, 75);
-
+*/
 			doc.setFontSize(25);
 			doc.setTextColor(50);
 		
