@@ -512,7 +512,7 @@ function printPDF() {
 			doc.text(15, 45+7+10+7*4, 'DESTINO: '+$("#aerodromeArrival").val());
 			doc.text(15+50, 45+7+10+7*4, 'OBS: '+$("#notes").val());
 			doc.text(15, 45+7+10+7*5, 'ETD: '+ convertToLT($("#ETD").val(),$("#timeType option:selected").text())+ '(LT)');
-			doc.text(15+50, 45+7+10+7*5, 'DURAÇÃO ESTIMADA DO VOO: '+ duration;
+			doc.text(15+50, 45+7+10+7*5, 'DURAÇÃO ESTIMADA DO VOO: '+ duration);
 			doc.text(15+60, 45+7+10+7*8, 'PILOTO COMANDANTE ');
 			doc.text(15, 45+7+10+7*10, 'NOME: '+ getPIC() + '  LICENÇA: '+getPICLicence()+ '        ASSINATURA:________________');
 
