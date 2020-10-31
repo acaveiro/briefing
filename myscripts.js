@@ -512,7 +512,7 @@ function printPDF() {
 			doc.text(15, 45+7+10+7*4, 'DESTINO: '+$("#aerodromeArrival").val());
 			doc.text(15+50, 45+7+10+7*4, 'OBS: '+$("#notes").val());
 			doc.text(15, 45+7+10+7*5, 'ETD: '+ convertToLT($("#ETD").val(),$("#timeType option:selected").text())+ '(LT)');
-			doc.text(15+50, 45+7+10+7*5, 'DURAÇÃO ESTIMADA DO VOO: '+ ((new Date("1/1/1900 " + $("#ETA").val()) - new Date("1/1/1900 " + $("#ETD").val()))/3600000).toFixed(2)+ ' h');
+			doc.text(15+50, 45+7+10+7*5, 'DURAÇÃO ESTIMADA DO VOO: '+ duration);
 			doc.text(15+60, 45+7+10+7*8, 'PILOTO COMANDANTE ');
 			doc.text(15, 45+7+10+7*10, 'NOME: '+ getPIC() + '  LICENÇA: '+getPICLicence()+ '        ASSINATURA:________________');
 
@@ -559,7 +559,7 @@ function printPDF() {
 			doc.text(15, 45+7+10+7*4+downGap, 'DESTINO: '+$("#aerodromeArrival").val());
 			doc.text(15+50, 45+7+10+7*4+downGap, 'OBS: '+$("#notes").val());
 			doc.text(15, 45+7+10+7*5+downGap, 'ETD: '+ convertToLT($("#ETD").val(),$("#timeType option:selected").text())+ '(LT)');
-			doc.text(15+50, 45+7+10+7*5+downGap, 'DURAÇÃO ESTIMADA DO VOO: '+ (parseInt($("#ETA").val()) - parseInt($("#ETD").val()))+ ' h');
+			doc.text(15+50, 45+7+10+7*5+downGap, 'DURAÇÃO ESTIMADA DO VOO: '+ duration);
 			doc.text(15+60, 45+7+10+7*8+downGap, 'PILOTO COMANDANTE ');
 			doc.text(15, 45+7+10+7*10+downGap, 'NOME: '+ getPIC() + '  LICENÇA: '+getPICLicence()+ '        ASSINATURA:_______________');			
 
