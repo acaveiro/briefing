@@ -410,4 +410,8 @@ background: rgb(0, 64, 128);
 
 #header{
 	width: 100%;	
-}	
+}
+
+.plotly{
+	margin: 0px auto;
+}
